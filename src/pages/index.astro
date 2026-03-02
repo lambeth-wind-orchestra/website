@@ -1,13 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import { getEntry, render } from 'astro:content';
+import EventCard from '../components/EventCard.astro';
+import { getEntry, getCollection, render } from 'astro:content';
 
 const entry = await getEntry('pages', 'home');
+const events = await getCollection('events');
 
 if (!entry) {
   return Astro.redirect('/404');
 }
+
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+const upcomingEvents = events
+  .filter((event) => new Date(event.data.date) >= today)
+  .sort(
+    (a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime()
+  )
+  .slice(0, 3);
 
 const { Content } = await render(entry);
 ---
@@ -19,11 +31,65 @@ const { Content } = await render(entry);
     primaryCTA={entry.data.hero?.primary_cta || 'Upcoming Events'}
     secondaryCTA={entry.data.hero?.secondary_cta || 'Learn More'}
   />
-  <div class="prose-container py-16 md:py-24">
-    <div
-      class="prose max-w-none prose-p:leading-relaxed prose-headings:font-serif prose-headings:font-normal prose-headings:text-orchard-terracotta"
-    >
-      <Content />
+
+  <section class="bg-white section-padding">
+    <div class="prose-container">
+      <div
+        class="prose max-w-none prose-p:leading-relaxed prose-headings:font-serif prose-headings:font-normal prose-headings:text-knole-ink"
+      >
+        <Content />
+      </div>
     </div>
-  </div>
+  </section>
+
+  {
+    upcomingEvents.length > 0 && (
+      <section class="bg-downs-chalk section-padding">
+        <div class="container mx-auto px-6 lg:px-12">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+            <div class="max-w-2xl">
+              <h2 class="text-4xl md:text-5xl font-serif text-knole-ink m-0">
+                Upcoming Events
+              </h2>
+              <p class="text-lg md:text-xl text-knole-ink/70 mt-4 mb-0 font-medium">
+                Experience the sound of Sevenoaks Saxes live or join us for our
+                next play day.
+              </p>
+            </div>
+            <a
+              href="/events"
+              class="group inline-flex items-center gap-2 text-xl font-serif text-wealden-green transition-all"
+            >
+              <span
+                class="relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-wealden-green after:origin-right after:scale-x-0 group-hover:after:scale-x-100 group-hover:after:origin-left after:transition-transform after:duration-500"
+              >
+                View all events
+              </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 transition-transform group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {upcomingEvents.map((event) => (
+              <EventCard event={event} variant="slim" />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
 </Layout>
