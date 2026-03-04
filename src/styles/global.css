@@ -29,11 +29,11 @@
 
 }
 
-.animate-fade-in {
+@utility animate-fade-in {
   animation: fade-in 0.8s ease-out forwards;
 }
 
-.animate-fade-in-up {
+@utility animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out forwards;
 }
 
@@ -41,6 +41,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -51,6 +52,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -100,31 +102,33 @@ html {
   scroll-behavior: smooth;
 }
 
-.prose-container {
+@utility prose-container {
   @apply max-w-4xl mx-auto px-6 md:px-8;
 }
 
-.section-padding {
+@utility section-padding {
   @apply py-24 md:py-32;
 }
 
-.glass {
+@utility glass {
   @apply bg-white/70 border border-white/20;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
-.text-gradient {
+@utility text-gradient {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-knole-ink via-bluebell-haze to-wealden-green;
 }
 
-.stagger-1 {
+@utility stagger-1 {
   animation-delay: 0.1s;
 }
-.stagger-2 {
+
+@utility stagger-2 {
   animation-delay: 0.2s;
 }
-.stagger-3 {
+
+@utility stagger-3 {
   animation-delay: 0.3s;
 }
 
