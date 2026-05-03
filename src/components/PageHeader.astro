@@ -9,18 +9,18 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<section class="relative w-full overflow-hidden bg-downs-chalk/20 pt-32 pb-20 border-b border-knole-ink/5">
-  <HeroMesh complexity={4} speed={0.25} opacity={0.15} grain={true} seed={456} />
+<section class="relative w-full overflow-hidden bg-lwo-off-white pt-32 pb-20 border-b border-lwo-navy/5">
+  <HeroMesh complexity={4} speed={0.2} opacity={0.15} grain={true} seed={456} />
 
   <div class="relative z-10 prose-container">
     <slot name="before" />
     <div class="animate-fade-in-up">
-      <h1 class="font-serif text-knole-ink m-0 text-5xl md:text-6xl lg:text-7xl leading-tight">
+      <h1 class="font-sans font-black text-lwo-navy m-0 text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tighter">
         {title}
       </h1>
       {
         description && (
-          <p class="text-xl md:text-2xl text-knole-ink/80 mt-8 max-w-2xl font-sans leading-relaxed">
+          <p class="text-xl md:text-2xl text-lwo-navy/80 mt-8 max-w-2xl font-sans font-medium leading-relaxed">
             {description}
           </p>
         )

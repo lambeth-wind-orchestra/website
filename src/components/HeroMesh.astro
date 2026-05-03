@@ -25,7 +25,7 @@ const {
   aria-hidden="true"
 >
   <canvas class="hero-mesh-canvas w-full h-full"></canvas>
-  <div class="hero-mesh-fallback absolute inset-0 bg-gradient-to-br from-wealden-green/5 via-bluebell-haze/5 to-orchard-terracotta/5 hidden"></div>
+  <div class="hero-mesh-fallback absolute inset-0 bg-gradient-to-br from-lwo-sage/10 via-white to-lwo-navy/5 hidden"></div>
   {
     grain && (
       <div
@@ -49,11 +49,11 @@ const {
     animationFrame: number = 0;
 
     colors = [
-      '#34A19C', // wealden-green
-      '#E27C6A', // orchard-terracotta
-      '#8480B6', // bluebell-haze
-      '#B0D6D4', // lighter wealden
-      '#F4BFB4', // lighter terracotta
+      '#92B5AC', // lwo-sage
+      '#1C2634', // lwo-navy
+      '#B4CDC6', // lwo-sage-light
+      '#2D3B4D', // lwo-navy-light
+      '#ffffff', // white
     ];
 
     seed: number;
@@ -80,7 +80,6 @@ const {
       }
     }
 
-    // Simple seeded random for consistent pattern on refresh
     seededRandom(s: number) {
       const x = Math.sin(s) * 10000;
       return x - Math.floor(x);
@@ -113,7 +112,6 @@ const {
       this.width = this.canvas.width = parent?.clientWidth || window.innerWidth;
       this.height = this.canvas.height = parent?.clientHeight || window.innerHeight;
 
-      // Scale blob positions to new dimensions to avoid shuffling
       this.blobs.forEach(blob => {
         blob.x = (blob.x / oldWidth) * this.width;
         blob.y = (blob.y / oldHeight) * this.height;
@@ -123,7 +121,7 @@ const {
     animate() {
       this.ctx.clearRect(0, 0, this.width, this.height);
       this.ctx.globalAlpha = this.opacity;
-      this.ctx.filter = 'blur(100px)';
+      this.ctx.filter = 'blur(120px)';
 
       this.blobs.forEach((blob) => {
         blob.x += blob.vx;

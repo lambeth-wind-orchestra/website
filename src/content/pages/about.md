@@ -1,16 +1,28 @@
 ---
-title: About Us
-description: Learn more about Sevenoaks Saxes.
+title: About Lambeth Wind Orchestra
+description: Learn about our history, our ethos, and our commitment to community music-making.
 ---
 
-Sevenoaks Saxes is a premier community saxophone organisation based in Kent. Comprising both a Saxophone Ensemble and a Saxophone Orchestra, we provide a platform for players of all levels to perform diverse and challenging repertoire in a professional, supportive environment.
+Lambeth Wind Orchestra (LWO) is a community wind orchestra based in Herne Hill, South London. Founded with a spirit of inclusivity and musical passion, we have grown into a vibrant ensemble that reflects the diverse community of our home.
 
-## Artistic Leadership
+## Our Ethos
 
-Led by our conductor Caroline Fernandes and supported by our patron, world-renowned saxophonist Andy Scott, Sevenoaks Saxes is dedicated to achieving the highest standards of musicianship. We believe that community music-making should be both intensive and rewarding, pushing our members to reach their full artistic potential.
+At the heart of LWO is a simple belief: music should be fun, friendly, and accessible to everyone. We are a community band in the truest sense, bringing together people of different ages, backgrounds, and musical experiences.
 
-Our rehearsals, held monthly at The Drive Methodist Church in Sevenoaks, are a masterclass in ensemble playing. We tackle everything from classical transcriptions to contemporary commissions, ensuring a broad and engaging musical experience for our members and audiences alike.
+While we take our music-making seriously and strive for a high standard of performance, we never lose sight of the joy and friendship that comes from playing together.
 
-## Our Community
+## Music by Women & Contemporary Commissions
 
-At the core of Sevenoaks Saxes is a vibrant community of passionate musicians. We are more than just a group of players; we are a collaborative space where friendships are formed and the joy of the saxophone is celebrated. From our regular rehearsals to our public concerts and immersive Play Days, we strive to be an integral part of the local arts scene and a home for saxophonists across the region.
+We are particularly known for our commitment to performing music by women composers. By actively seeking out and showcasing these works, we aim to contribute to a more balanced and representative musical landscape.
+
+Our dedication to new music also extends to commissions and premieres, ensuring that our repertoire remains fresh, challenging, and relevant to modern audiences.
+
+## Community Partnerships
+
+LWO is proud to have a longstanding partnership with "Music Masters," a local charity dedicated to providing high-quality music education. Through this partnership and our regular performances, we seek to inspire the next generation of musicians and strengthen the cultural fabric of South London.
+
+## Where We Perform
+
+You can find us performing in a variety of settings, from formal concert halls to the beautiful bandstands of South London’s parks. Our bandstand gigs are a particular highlight, offering a relaxed and joyful way to share music with our neighbours and friends.
+
+We are a registered charity (Charity No. 1138703) and are governed by a committee of band members who are dedicated to the long-term success and inclusivity of the orchestra.

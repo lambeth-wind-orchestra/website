@@ -1,8 +1,8 @@
 {
-  "name": "sevenoaks-saxes",
+  "name": "lambeth-wind-orchestra",
   "type": "module",
   "version": "1.0.0",
-  "description": "The official website for Sevenoaks Saxes, a community saxophone ensemble and orchestra.",
+  "description": "The official website for Lambeth Wind Orchestra, a community wind orchestra based in South London.",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

@@ -3,30 +3,20 @@
 
 @theme {
   --font-sans:
-    'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
+    'Work Sans', ui-sans-serif, system-ui, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-serif: 'Young Serif', serif;
+  --font-serif: 'Work Sans', serif;
 
-  --color-wealden-green: #34a19c;
-  --color-wealden-green-light: #86c7c4;
-  --color-wealden-green-dark: #2b817d;
+  --color-lwo-navy: #1c2634;
+  --color-lwo-navy-light: #2d3b4d;
+  --color-lwo-navy-dark: #0f151d;
 
-  --color-orchard-terracotta: #e27c6a;
-  --color-orchard-terracotta-light: #e89688;
-  --color-orchard-terracotta-dark: #b66354;
+  --color-lwo-sage: #92b5ac;
+  --color-lwo-sage-light: #b4cdc6;
+  --color-lwo-sage-dark: #70948b;
 
-  --color-knole-ink: #2d2d41;
-  --color-knole-ink-light: #575767;
-  --color-knole-ink-dark: #252433;
-
-  --color-bluebell-haze: #8480b6;
-  --color-bluebell-haze-light: #9d99c5;
-  --color-bluebell-haze-dark: #6a6692;
-
-  --color-downs-chalk: #f0f1f2;
-  --color-downs-chalk-light: #f3f4f5;
-  --color-downs-chalk-dark: #c0c1c2;
-
+  --color-lwo-white: #ffffff;
+  --color-lwo-off-white: #f8fafc;
 }
 
 @utility animate-fade-in {
@@ -60,16 +50,16 @@
 }
 
 :root {
-  --tw-prose-headings: var(--color-knole-ink);
-  --tw-prose-links: var(--color-bluebell-haze-dark);
-  --tw-prose-quote-borders: var(--color-bluebell-haze);
+  --tw-prose-headings: var(--color-lwo-sage);
+  --tw-prose-links: var(--color-lwo-sage-dark);
+  --tw-prose-quote-borders: var(--color-lwo-sage);
   --tw-prose-pre-code: white;
-  --tw-prose-pre-bg: var(--color-knole-ink);
+  --tw-prose-pre-bg: var(--color-lwo-navy);
 }
 
 @layer base {
   body {
-    @apply font-sans antialiased text-knole-ink bg-white;
+    @apply font-sans antialiased text-lwo-navy bg-white;
   }
 
   h1,
@@ -78,7 +68,7 @@
   h4,
   h5,
   h6 {
-    @apply font-serif font-normal text-knole-ink tracking-tight;
+    @apply font-sans font-semibold text-lwo-sage tracking-tight;
   }
 
   h1 {
@@ -94,7 +84,7 @@
   }
 
   p {
-    @apply mb-8 text-lg leading-relaxed text-knole-ink/90;
+    @apply mb-8 text-lg leading-relaxed text-lwo-navy/90;
   }
 }
 
@@ -117,7 +107,7 @@ html {
 }
 
 @utility text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-knole-ink via-bluebell-haze to-wealden-green;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-lwo-navy via-lwo-sage to-lwo-sage-dark;
 }
 
 @utility stagger-1 {
@@ -133,17 +123,17 @@ html {
 }
 
 .prose {
-  --tw-prose-body: var(--color-knole-ink);
-  --tw-prose-lead: var(--color-knole-ink);
-  --tw-prose-bold: var(--color-knole-ink);
-  --tw-prose-counters: var(--color-knole-ink);
-  --tw-prose-bullets: var(--color-knole-ink);
-  --tw-prose-hr: var(--color-downs-chalk-dark);
-  --tw-prose-quotes: var(--color-knole-ink);
-  --tw-prose-captions: var(--color-knole-ink-light);
-  --tw-prose-code: var(--color-knole-ink);
-  --tw-prose-th-borders: var(--color-downs-chalk-dark);
-  --tw-prose-td-borders: var(--color-downs-chalk-dark);
-  --tw-prose-invert-bullets: var(--color-downs-chalk-dark);
-  --tw-prose-invert-counters: var(--color-downs-chalk-dark);
+  --tw-prose-body: var(--color-lwo-navy);
+  --tw-prose-lead: var(--color-lwo-navy);
+  --tw-prose-bold: var(--color-lwo-navy);
+  --tw-prose-counters: var(--color-lwo-navy);
+  --tw-prose-bullets: var(--color-lwo-navy);
+  --tw-prose-hr: var(--color-lwo-sage-light);
+  --tw-prose-quotes: var(--color-lwo-navy);
+  --tw-prose-captions: var(--color-lwo-navy-light);
+  --tw-prose-code: var(--color-lwo-navy);
+  --tw-prose-th-borders: var(--color-lwo-sage-light);
+  --tw-prose-td-borders: var(--color-lwo-sage-light);
+  --tw-prose-invert-bullets: var(--color-lwo-sage-light);
+  --tw-prose-invert-counters: var(--color-lwo-sage-light);
 }

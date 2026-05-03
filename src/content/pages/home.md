@@ -1,25 +1,25 @@
 ---
-title: Welcome to Sevenoaks Saxes
-description: A community saxophone ensemble based in Sevenoaks, Kent.
+title: Welcome to Lambeth Wind Orchestra
+description: A friendly community wind orchestra based in Herne Hill, South London.
 hero:
-  title: The Sound of Sevenoaks
-  description: A dynamic community of saxophonists dedicated to musical excellence, artistic growth, and the joy of ensemble playing.
-  primary_cta: Join a Rehearsal
-  secondary_cta: Our Story
+  title: Music for the Community
+  description: A vibrant, inclusive wind orchestra dedicated to making great music, celebrating diversity, and sharing the joy of performance in South London.
+  primary_cta: Upcoming Events
+  secondary_cta: About LWO
 ---
 
-Sevenoaks Saxes is more than just an ensemble—it is a vibrant musical community. Based in the heart of Sevenoaks, we bring together players of all ages and backgrounds to explore the incredible versatility of the saxophone.
+Lambeth Wind Orchestra is more than just a band—it is a warm and welcoming musical community. Based in Herne Hill, we bring together people from all walks of life, ages, and backgrounds to share in the experience of high-quality music-making.
 
-Whether you are a seasoned performer or returning to your instrument after a break, we provide a professional yet supportive environment to hone your skills and perform challenging, rewarding music.
+We pride ourselves on being a friendly and inclusive group, where the joy of playing is matched by our commitment to artistic growth and community engagement.
 
-## Musical Excellence at Our Core
+## Diverse Music and Representation
 
-Under the inspired leadership of our conductor, Caroline Fernandes, Sevenoaks Saxes has grown into one of the region's premier community ensembles. We pride ourselves on a high standard of musicianship, tackling a broad and diverse repertoire that spans classical transcriptions, contemporary commissions, and big band jazz.
+One of our defining passions is performing works by women composers. We believe in the importance of representation in music and strive to bring underrepresented voices to the forefront of our repertoire.
 
-Our monthly rehearsals are intensive, focused, and immensely rewarding, pushing our members to achieve their artistic best while maintaining the friendly, collaborative spirit that defines our group.
+From formal concerts to relaxed afternoon bandstand performances, our music is as diverse as the community we serve. Whether we are playing contemporary commissions or classical favourites, our goal is always to create a delightful experience for our members and our audience.
 
-## A Legacy of Passion
+## Rooted in South London
 
-Founded with a simple mission to celebrate the saxophone, Sevenoaks Saxes has become a staple of the local arts scene. We believe that music has the power to connect and inspire, and we strive to bring that energy to every performance, workshop, and play day we host.
+LWO is firmly rooted in the local community. We have a longstanding partnership with the local charity "Music Masters" and regularly perform in local parks and venues across Herne Hill and the wider South London area.
 
-With the support of our distinguished patron, the world-renowned saxophonist Andy Scott, we continue to evolve, seeking new musical horizons and welcoming new voices into our ensemble.
+Whether you are a seasoned musician or looking to pick up your instrument after a break, we offer a supportive and fun environment to develop your skills and make lasting connections through music.

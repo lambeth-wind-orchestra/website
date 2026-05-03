@@ -1,26 +1,24 @@
 ---
 title: Contact Us
-description: Get in touch with Sevenoaks Saxes.
+description: Get in touch with Lambeth Wind Orchestra.
 ---
 
-Whether you're looking to join the ensemble, interested in attending a Play Day, or wish to book us for a performance, we'd love to hear from you. Our community is built on collaboration and a shared passion for the saxophone, and we welcome all inquiries.
+Whether you're interested in joining the band, booking us for an event, or just want to say hello, we'd love to hear from you.
 
-## How to Reach Us
+## Get in Touch
 
-The best way to get in touch is via email. We aim to respond to all messages within 48 hours.
+The best way to reach us is by email at:
+**[info@lambethwindorchestra.org.uk](mailto:info@lambethwindorchestra.org.uk)**
 
-**Email:** [info@sevenoakssaxes.com](mailto:info@sevenoakssaxes.com)
+You can also find us on our social media channels:
+- [Facebook](https://facebook.com/lambethwindorchestra/)
+- [Instagram](https://instagram.com/lambethwindorchestra/)
+- [YouTube](https://www.youtube.com/channel/UC2q69G7ZaC6qIjIJudJIyZA)
 
-## Visit a Rehearsal
+## Mailing List
 
-We rehearse once a month on Saturdays at **The Drive Methodist Church** in Sevenoaks. If you're interested in joining, please contact us first so we can ensure there's a chair and music ready for you.
+If you'd like to be kept up to date on our upcoming events and news, please let us know and we'll add you to our mailing list.
 
-**Address:**
-The Drive Methodist Church
-The Drive
-Sevenoaks
-TN13 3AB
+## Charity Information
 
-## Stay Connected
-
-Follow us on our journey and stay up to date with our latest performances, workshops, and news by following us on social media. We regularly share clips from our rehearsals and highlights from our concerts.
+Lambeth Wind Orchestra is a charity registered in England and Wales (charity number 1138703).

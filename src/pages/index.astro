@@ -35,7 +35,7 @@ const { Content } = await render(entry);
   <section class="bg-white section-padding">
     <div class="prose-container">
       <div
-        class="prose max-w-none prose-p:leading-relaxed prose-headings:font-serif prose-headings:font-normal prose-headings:text-knole-ink"
+        class="prose max-w-none prose-p:leading-relaxed prose-headings:font-sans prose-headings:font-bold prose-headings:text-lwo-sage"
       >
         <Content />
       </div>
@@ -44,24 +44,23 @@ const { Content } = await render(entry);
 
   {
     upcomingEvents.length > 0 && (
-      <section class="bg-downs-chalk section-padding">
+      <section class="bg-lwo-off-white section-padding">
         <div class="container mx-auto px-6 lg:px-12">
           <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
             <div class="max-w-2xl">
-              <h2 class="text-4xl md:text-5xl font-serif text-knole-ink m-0">
+              <h2 class="text-4xl md:text-5xl font-sans font-bold text-lwo-navy m-0">
                 Upcoming Events
               </h2>
-              <p class="text-lg md:text-xl text-knole-ink/70 mt-4 mb-0 font-medium">
-                Experience the sound of Sevenoaks Saxes live or join us for our
-                next play day.
+              <p class="text-lg md:text-xl text-lwo-navy/70 mt-4 mb-0 font-medium">
+                Join Lambeth Wind Orchestra live at our next concert or bandstand performance.
               </p>
             </div>
             <a
               href="/events"
-              class="group inline-flex items-center gap-2 text-xl font-serif text-wealden-green transition-all"
+              class="group inline-flex items-center gap-2 text-xl font-sans font-bold text-lwo-sage transition-all"
             >
               <span
-                class="relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-wealden-green after:origin-right after:scale-x-0 group-hover:after:scale-x-100 group-hover:after:origin-left after:transition-transform after:duration-500"
+                class="relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-lwo-sage after:origin-right after:scale-x-0 group-hover:after:scale-x-100 group-hover:after:origin-left after:transition-transform after:duration-500"
               >
                 View all events
               </span>
