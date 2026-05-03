@@ -1,6 +1,6 @@
 # Lambeth Wind Orchestra Website
 
-Welcome to the repository for the Lambeth Wind Orchestra website. LWO is a community wind orchestra based in Herne Hill, South London, known for its inclusive ethos and commitment to performing music by women composers.
+Welcome to the repository for the Lambeth Wind Orchestra website.
 
 This website is built with [Astro 5](https://astro.build/), styled with [Tailwind CSS 4](https://tailwindcss.com/), and deployed on [Cloudflare Pages](https://pages.cloudflare.com/).
 
