@@ -10,6 +10,7 @@ Lambeth Wind Orchestra is a registered charity in England and Wales (number 1138
 ## What data we collect
 
 We may collect personal data from you when you:
+
 - Contact us via email or our website
 - Sign up for our mailing list
 - Join the orchestra as a member
@@ -20,6 +21,7 @@ This data may include your name, email address, phone number, and musical backgr
 ## How we use your data
 
 We use your data to:
+
 - Respond to your enquiries
 - Send you updates about upcoming LWO events (if you have opted in)
 - Manage orchestra membership and rehearsals

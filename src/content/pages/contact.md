@@ -11,6 +11,7 @@ The best way to reach us is by email at:
 **[info@lambethwindorchestra.org.uk](mailto:info@lambethwindorchestra.org.uk)**
 
 You can also find us on our social media channels:
+
 - [Facebook](https://facebook.com/lambethwindorchestra/)
 - [Instagram](https://instagram.com/lambethwindorchestra/)
 - [YouTube](https://www.youtube.com/channel/UC2q69G7ZaC6qIjIJudJIyZA)

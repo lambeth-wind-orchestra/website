@@ -13,11 +13,12 @@ Example event file (`20250712-garden-museum.md`):
 name: LWO at the Garden Museum
 description: Join us for an afternoon of music at the Garden Museum!
 date: 2025-07-12
-time: "Timing TBC"
+time: 'Timing TBC'
 location: Garden Museum
 type: concert
-tags: ["Summer", "South London"]
+tags: ['Summer', 'South London']
 ---
+
 Join Lambeth Wind Orchestra for a delightful afternoon...
 ```
 
@@ -37,6 +38,7 @@ hero:
   primary_cta: 'Upcoming Events'
   secondary_cta: 'About LWO'
 ---
+
 Lambeth Wind Orchestra is more than just a band...
 ```
 

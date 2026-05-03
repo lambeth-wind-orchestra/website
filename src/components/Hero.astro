@@ -1,6 +1,4 @@
 ---
-import HeroMesh from './HeroMesh.astro';
-
 interface Props {
   title: string;
   description: string;
@@ -12,42 +10,54 @@ const { title, description, primaryCTA, secondaryCTA } = Astro.props;
 ---
 
 <section
-  class="relative w-full min-h-[calc(100vh-5rem)] flex items-center justify-center overflow-hidden bg-white py-24"
+  class="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden bg-white"
 >
-  <HeroMesh complexity={5} speed={0.2} opacity={0.3} grain={true} />
+  <!-- Bold Geometric Background Element -->
+  <div class="absolute inset-0 z-0">
+    <div
+      class="absolute top-0 right-0 w-1/2 h-full bg-lwo-navy/5 -skew-x-12 transform origin-top-right"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 left-0 w-1/3 h-1/2 bg-lwo-sage/10 skew-y-6 transform origin-bottom-left"
+    >
+    </div>
+  </div>
 
-  <!-- Content -->
-  <div class="relative z-10 container mx-auto px-6 text-center">
-    <div class="max-w-4xl mx-auto space-y-10">
-      <div class="overflow-hidden">
+  <!-- Content Area with Bold Border/Shadow -->
+  <div class="relative z-10 container mx-auto px-6 py-20">
+    <div
+      class="max-w-5xl mx-auto border-[12px] border-lwo-navy bg-white p-8 md:p-16 lg:p-24 shadow-[24px_24px_0px_0px_rgba(146,181,172,1)]"
+    >
+      <div class="space-y-10">
         <h1
-          class="text-lwo-navy text-5xl md:text-7xl lg:text-8xl font-sans font-black leading-[1] tracking-tighter animate-fade-in-up"
+          class="text-lwo-navy text-5xl md:text-7xl lg:text-8xl font-sans font-bold leading-[1] tracking-tighter animate-fade-in-up"
         >
           {title}
         </h1>
-      </div>
 
-      <p
-        class="text-lwo-navy text-xl md:text-2xl font-sans font-medium max-w-2xl mx-auto leading-relaxed opacity-0 animate-fade-in-up stagger-1"
-      >
-        {description}
-      </p>
+        <p
+          class="text-lwo-navy text-xl md:text-2xl font-sans font-medium max-w-2xl leading-relaxed opacity-0 animate-fade-in-up stagger-1"
+        >
+          {description}
+        </p>
 
-      <div
-        class="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6 opacity-0 animate-fade-in-up stagger-2"
-      >
-        <a
-          href="/events"
-          class="group relative min-w-[220px] inline-flex items-center justify-center px-10 py-5 bg-lwo-sage text-lwo-navy font-sans font-bold text-lg transition-all duration-500 rounded-full hover:bg-lwo-sage-dark hover:scale-105 focus:scale-105 focus:outline-none focus:ring-4 focus:ring-lwo-sage/30 active:scale-95 shadow-xl shadow-lwo-sage/20"
+        <div
+          class="flex flex-col sm:flex-row items-center gap-6 pt-6 opacity-0 animate-fade-in-up stagger-2"
         >
-          {primaryCTA}
-        </a>
-        <a
-          href="/about"
-          class="group relative min-w-[220px] inline-flex items-center justify-center px-10 py-5 bg-lwo-navy text-white font-sans font-bold text-lg transition-all duration-500 rounded-full hover:bg-lwo-navy-dark hover:scale-105 focus:scale-105 focus:outline-none focus:ring-4 focus:ring-lwo-navy/30 active:scale-95 shadow-xl shadow-lwo-navy/20"
-        >
-          {secondaryCTA}
-        </a>
+          <a
+            href="/events"
+            class="group relative min-w-[220px] inline-flex items-center justify-center px-10 py-5 bg-lwo-sage text-lwo-navy font-sans font-bold text-lg transition-all duration-200 hover:bg-lwo-sage-dark hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-lwo-sage/30 active:translate-y-0"
+          >
+            {primaryCTA}
+          </a>
+          <a
+            href="/about"
+            class="group relative min-w-[220px] inline-flex items-center justify-center px-10 py-5 border-4 border-lwo-navy text-lwo-navy font-sans font-bold text-lg transition-all duration-200 hover:bg-lwo-navy hover:text-white hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-lwo-navy/30 active:translate-y-0"
+          >
+            {secondaryCTA}
+          </a>
+        </div>
       </div>
     </div>
   </div>

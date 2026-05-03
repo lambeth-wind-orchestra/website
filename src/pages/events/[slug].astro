@@ -22,10 +22,8 @@ const formattedDate = new Date(event.data.date).toLocaleDateString('en-GB', {
 });
 
 const typeColors = {
-  concert:
-    'text-lwo-navy border-lwo-sage/30 bg-lwo-sage/10',
-  rehearsal:
-    'text-lwo-navy border-lwo-sage/20 bg-lwo-off-white',
+  concert: 'text-lwo-navy border-lwo-sage/30 bg-lwo-sage/10',
+  rehearsal: 'text-lwo-navy border-lwo-sage/20 bg-lwo-off-white',
   other: 'text-lwo-navy border-lwo-navy/10 bg-lwo-off-white',
 };
 ---
@@ -52,7 +50,10 @@ const typeColors = {
       All Events
     </a>
 
-    <div slot="before" class="flex items-center space-x-3 mb-8 animate-fade-in-up">
+    <div
+      slot="before"
+      class="flex items-center space-x-3 mb-8 animate-fade-in-up"
+    >
       <span
         class={`inline-flex items-center px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.25em] rounded-full border ${typeColors[event.data.type] || typeColors.other}`}
       >
@@ -77,7 +78,9 @@ const typeColors = {
         >
           Time
         </h2>
-        <p class="text-xl text-lwo-navy font-sans font-bold">{event.data.time}</p>
+        <p class="text-xl text-lwo-navy font-sans font-bold">
+          {event.data.time}
+        </p>
       </div>
       <div>
         <h2

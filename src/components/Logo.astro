@@ -6,7 +6,10 @@ interface Props {
 const { class: className } = Astro.props;
 ---
 
-<div class={`relative flex items-center justify-center ${className}`} aria-hidden="true">
+<div
+  class={`relative flex items-center justify-center ${className}`}
+  aria-hidden="true"
+>
   <div class="w-full h-full rounded-full bg-current opacity-20"></div>
   <div class="absolute inset-0 flex items-center justify-center">
     <div class="w-3/5 h-3/5 rounded-full border-2 border-current"></div>

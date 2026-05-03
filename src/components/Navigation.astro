@@ -14,7 +14,7 @@ import Logo from './Logo.astro';
 ---
 
 <header
-  class="sticky top-0 z-50 w-full glass border-b border-lwo-navy/5 transition-all duration-300"
+  class="sticky top-0 z-50 w-full bg-lwo-navy border-b border-lwo-sage/20 transition-all duration-300"
 >
   <div
     class="container mx-auto flex h-20 items-center justify-between px-6 sm:px-8 lg:px-12"
@@ -22,23 +22,24 @@ import Logo from './Logo.astro';
     <div class="flex items-center">
       <a
         href="/"
-        class="group flex items-center gap-3 text-2xl font-sans font-bold tracking-tight text-lwo-navy"
+        class="group flex items-center gap-3 text-xl font-sans font-medium tracking-tight text-white"
       >
-        <Logo
-          class="h-9 w-9 text-lwo-sage"
-        />
+        <Logo class="h-8 w-8 text-lwo-sage" />
         <span>Lambeth Wind Orchestra</span>
       </a>
     </div>
 
     <!-- Desktop Navigation -->
-    <nav class="hidden md:flex md:items-center md:space-x-8 lg:space-x-10 h-full" aria-label="Main navigation">
+    <nav
+      class="hidden md:flex md:items-center md:space-x-8 lg:space-x-10 h-full"
+      aria-label="Main navigation"
+    >
       {
         navLinks.map((link) => (
           <div class="relative group h-full flex items-center">
             <a
               href={link.href}
-              class="text-base font-semibold text-lwo-navy/80 hover:text-lwo-sage transition-all duration-300 tracking-wide relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-lwo-sage after:transition-all after:duration-300"
+              class="text-sm font-medium text-white/90 hover:text-lwo-sage transition-all duration-200 tracking-wide relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-lwo-sage after:transition-all after:duration-200"
             >
               {link.name}
             </a>
@@ -52,7 +53,7 @@ import Logo from './Logo.astro';
       <button
         id="mobile-menu-button"
         type="button"
-        class="inline-flex items-center justify-center rounded-full p-2.5 text-lwo-navy hover:bg-lwo-sage/10 transition-colors"
+        class="inline-flex items-center justify-center rounded-none p-2.5 text-white hover:bg-lwo-sage/20 transition-colors"
         aria-controls="mobile-menu"
         aria-expanded="false"
       >
@@ -69,7 +70,7 @@ import Logo from './Logo.astro';
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            stroke-width="2"
+            stroke-width="1.5"
             d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
         <svg
@@ -135,7 +136,11 @@ import Logo from './Logo.astro';
 
   // Close mobile menu on escape
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileMenu && !mobileMenu.classList.contains('hidden')) {
+    if (
+      e.key === 'Escape' &&
+      mobileMenu &&
+      !mobileMenu.classList.contains('hidden')
+    ) {
       mobileMenuButton?.click();
     }
   });

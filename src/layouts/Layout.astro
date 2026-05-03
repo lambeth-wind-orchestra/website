@@ -29,14 +29,23 @@ const {
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={`${title} | Lambeth Wind Orchestra`} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL('/images/hero.png', Astro.url)} />
+    <meta
+      property="og:image"
+      content={new URL('/images/hero.png', Astro.url)}
+    />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url} />
-    <meta property="twitter:title" content={`${title} | Lambeth Wind Orchestra`} />
+    <meta
+      property="twitter:title"
+      content={`${title} | Lambeth Wind Orchestra`}
+    />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL('/images/hero.png', Astro.url)} />
+    <meta
+      property="twitter:image"
+      content={new URL('/images/hero.png', Astro.url)}
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -44,7 +53,9 @@ const {
       rel="stylesheet"
     />
   </head>
-  <body class="min-h-screen flex flex-col bg-white selection:bg-lwo-sage/20 selection:text-lwo-sage-dark">
+  <body
+    class="min-h-screen flex flex-col bg-white selection:bg-lwo-sage/20 selection:text-lwo-sage-dark"
+  >
     <Navigation />
     <main class="flex-grow">
       <slot />

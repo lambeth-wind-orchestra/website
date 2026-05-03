@@ -3,8 +3,8 @@
 
 @theme {
   --font-sans:
-    'Work Sans', ui-sans-serif, system-ui, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    'Work Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-serif: 'Work Sans', serif;
 
   --color-lwo-navy: #1c2634;
@@ -50,8 +50,8 @@
 }
 
 :root {
-  --tw-prose-headings: var(--color-lwo-sage);
-  --tw-prose-links: var(--color-lwo-sage-dark);
+  --tw-prose-headings: var(--color-lwo-navy);
+  --tw-prose-links: var(--color-lwo-navy);
   --tw-prose-quote-borders: var(--color-lwo-sage);
   --tw-prose-pre-code: white;
   --tw-prose-pre-bg: var(--color-lwo-navy);
@@ -68,7 +68,7 @@
   h4,
   h5,
   h6 {
-    @apply font-sans font-semibold text-lwo-sage tracking-tight;
+    @apply font-sans font-bold text-lwo-navy tracking-tight;
   }
 
   h1 {
@@ -76,7 +76,7 @@
   }
 
   h2 {
-    @apply text-3xl md:text-4xl mt-16 mb-8 tracking-tight;
+    @apply text-3xl md:text-4xl mt-16 mb-8 tracking-tight border-b-4 border-lwo-sage inline-block pb-2;
   }
 
   h3 {
@@ -98,16 +98,6 @@ html {
 
 @utility section-padding {
   @apply py-24 md:py-32;
-}
-
-@utility glass {
-  @apply bg-white/70 border border-white/20;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-@utility text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-lwo-navy via-lwo-sage to-lwo-sage-dark;
 }
 
 @utility stagger-1 {

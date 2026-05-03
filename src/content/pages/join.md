@@ -10,6 +10,7 @@ Lambeth Wind Orchestra is a friendly and inclusive community band, and we are al
 We welcome players of all ages and backgrounds. While we don't have formal auditions for most sections, we generally recommend a standard of around Grade 6 or above to ensure you get the most out of our rehearsals and repertoire.
 
 We are a wind orchestra, so we welcome:
+
 - Woodwind (Flute, Oboe, Clarinet, Saxophone, Bassoon)
 - Brass (Trumpet, Horn, Trombone, Euphonium, Tuba)
 - Percussion

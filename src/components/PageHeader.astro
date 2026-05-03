@@ -1,6 +1,4 @@
 ---
-import HeroMesh from './HeroMesh.astro';
-
 interface Props {
   title: string;
   description?: string;
@@ -9,20 +7,36 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<section class="relative w-full overflow-hidden bg-lwo-off-white pt-32 pb-20 border-b border-lwo-navy/5">
-  <HeroMesh complexity={4} speed={0.2} opacity={0.15} grain={true} seed={456} />
+<section
+  class="relative w-full overflow-hidden bg-white pt-32 pb-20 border-b-[12px] border-lwo-navy"
+>
+  <!-- Bold Geometric Accents -->
+  <div
+    class="absolute top-0 right-0 w-32 h-32 bg-lwo-sage opacity-20 transform translate-x-16 -translate-y-16 rotate-45"
+  >
+  </div>
 
   <div class="relative z-10 prose-container">
     <slot name="before" />
     <div class="animate-fade-in-up">
-      <h1 class="font-sans font-black text-lwo-navy m-0 text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tighter">
+      <div class="inline-block bg-lwo-sage px-4 py-1 mb-6">
+        <span
+          class="text-lwo-navy font-sans font-bold tracking-widest text-sm uppercase"
+          >Lambeth Wind Orchestra</span
+        >
+      </div>
+      <h1
+        class="font-sans font-bold text-lwo-navy m-0 text-5xl md:text-7xl leading-tight tracking-tighter"
+      >
         {title}
       </h1>
       {
         description && (
-          <p class="text-xl md:text-2xl text-lwo-navy/80 mt-8 max-w-2xl font-sans font-medium leading-relaxed">
-            {description}
-          </p>
+          <div class="mt-8 border-l-8 border-lwo-sage pl-8">
+            <p class="text-xl md:text-2xl text-lwo-navy/90 max-w-2xl font-sans font-medium leading-relaxed mb-0">
+              {description}
+            </p>
+          </div>
         )
       }
     </div>
