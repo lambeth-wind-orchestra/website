@@ -1,6 +1,8 @@
 ---
 title: Upcoming Events
-description: Stay up to date with our performances, rehearsals, and workshops.
+description: Join Lambeth Wind Orchestra at our next concert or bandstand performance.
 ---
 
-Stay up to date with our performances, rehearsals, and workshops.
+We perform regularly across South London, mixing formal concerts with relaxed afternoon performances on local bandstands.
+
+Check out our upcoming events below. We look forward to seeing you there!

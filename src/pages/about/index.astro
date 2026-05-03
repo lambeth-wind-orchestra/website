@@ -13,12 +13,16 @@ const { Content } = await render(entry);
 ---
 
 <Layout title={entry.data.title} description={entry.data.description}>
-  <PageHeader title={entry.data.title} description={entry.data.description} />
+  <PageHeader
+    title={entry.data.title}
+    description={entry.data.description}
+    image={entry.data.image}
+  />
 
   <section class="bg-white section-padding">
     <div class="prose-container">
       <div
-        class="prose max-w-none prose-p:leading-relaxed prose-headings:font-serif prose-headings:font-normal prose-headings:text-knole-ink"
+        class="prose max-w-none prose-p:leading-relaxed prose-headings:font-sans prose-headings:font-bold prose-headings:text-lwo-sage prose-img:rounded-3xl prose-img:shadow-2xl"
       >
         <Content />
       </div>

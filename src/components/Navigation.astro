@@ -2,96 +2,45 @@
 const navLinks = [
   { name: 'Home', href: '/' },
   {
-    name: 'About us',
+    name: 'About',
     href: '/about',
-    dropdown: [
-      { name: 'Our groups', href: '/about/our-groups' },
-      { name: 'Play days', href: '/about/play-days' },
-      { name: 'Our conductor', href: '/about/our-conductor' },
-      { name: 'Our patron', href: '/about/our-patron' },
-    ],
   },
   { name: 'Events', href: '/events' },
-  { name: 'Contact us', href: '/contact' },
+  { name: 'Join', href: '/join' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 import Logo from './Logo.astro';
 ---
 
-<header
-  class="sticky top-0 z-50 w-full glass border-b border-knole-ink/5 transition-all duration-300"
->
+<header class="relative z-50 w-full bg-lwo-navy border-b border-lwo-sage/20">
   <div
     class="container mx-auto flex h-20 items-center justify-between px-6 sm:px-8 lg:px-12"
   >
     <div class="flex items-center">
       <a
         href="/"
-        class="group flex items-center gap-3 text-2xl font-serif font-normal tracking-tight text-knole-ink"
+        class="group flex items-center gap-3 text-xl font-sans font-medium tracking-tight text-white"
       >
-        <Logo
-          class="h-9 w-9 text-wealden-green"
-        />
-        <span class="font-serif">Sevenoaks Saxes</span>
+        <Logo class="h-8 w-8 text-lwo-sage" />
+        <span>Lambeth Wind Orchestra</span>
       </a>
     </div>
 
     <!-- Desktop Navigation -->
-    <nav class="hidden md:flex md:items-center md:space-x-10 lg:space-x-12 h-full" aria-label="Main navigation">
+    <nav
+      class="hidden md:flex md:items-center md:space-x-8 lg:space-x-10 h-full"
+      aria-label="Main navigation"
+    >
       {
         navLinks.map((link) => (
-          <div class="relative group h-full flex items-center dropdown-container">
-            {link.dropdown ? (
-              <div class="flex items-center space-x-1.5 cursor-default h-full">
-                <a
-                  href={link.href}
-                  class="text-base font-semibold text-knole-ink/80 hover:text-wealden-green transition-all duration-300 tracking-wide relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 group-hover:after:w-full group-focus-within:after:w-full after:bg-wealden-green after:transition-all after:duration-300"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  {link.name}
-                </a>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4 text-knole-ink/60 group-hover:text-wealden-green transition-transform duration-300 group-hover:rotate-180 group-focus-within:rotate-180"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.5"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-
-                {/* Dropdown Menu */}
-                <div class="absolute left-1/2 -translate-x-1/2 top-full w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 ease-out scale-95 group-hover:scale-100 group-focus-within:scale-100 origin-top z-50">
-                  <div class="pt-4">
-                    <div class="bg-knole-ink p-3 rounded-2xl shadow-2xl space-y-1" role="menu">
-                      {link.dropdown.map((sublink) => (
-                        <a
-                          href={sublink.href}
-                          class="block px-4 py-3 text-[15px] font-medium text-downs-chalk/80 hover:text-white hover:bg-white/10 focus:text-white focus:bg-white/10 focus:outline-none rounded-xl transition-all duration-200"
-                          role="menuitem"
-                        >
-                          {sublink.name}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <a
-                href={link.href}
-                class="text-base font-semibold text-knole-ink/80 hover:text-wealden-green transition-all duration-300 tracking-wide relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-wealden-green after:transition-all after:duration-300"
-              >
-                {link.name}
-              </a>
-            )}
+          <div class="relative group h-full flex items-center">
+            <a
+              href={link.href}
+              class="text-sm font-medium text-white/90 hover:text-lwo-sage transition-all duration-200 tracking-wide relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-lwo-sage after:transition-all after:duration-200"
+            >
+              {link.name}
+            </a>
           </div>
         ))
       }
@@ -102,7 +51,7 @@ import Logo from './Logo.astro';
       <button
         id="mobile-menu-button"
         type="button"
-        class="inline-flex items-center justify-center rounded-full p-2.5 text-knole-ink hover:bg-wealden-green/10 transition-colors"
+        class="inline-flex items-center justify-center rounded-none p-2.5 text-white hover:bg-lwo-sage/20 transition-colors"
         aria-controls="mobile-menu"
         aria-expanded="false"
       >
@@ -119,7 +68,7 @@ import Logo from './Logo.astro';
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            stroke-width="2"
+            stroke-width="1.5"
             d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
         <svg
@@ -143,28 +92,16 @@ import Logo from './Logo.astro';
 
   <!-- Mobile Menu -->
   <div class="hidden md:hidden overflow-hidden" id="mobile-menu">
-    <div class="px-6 pb-12 pt-8 bg-knole-ink shadow-2xl space-y-8">
+    <div class="px-6 pb-12 pt-8 bg-lwo-navy shadow-2xl space-y-8">
       {
         navLinks.map((link) => (
           <div class="space-y-4">
             <a
               href={link.href}
-              class="block text-2xl font-serif text-white hover:text-wealden-green transition-colors"
+              class="block text-2xl font-sans font-bold text-white hover:text-lwo-sage transition-colors"
             >
               {link.name}
             </a>
-            {link.dropdown && (
-              <div class="grid grid-cols-1 gap-4 pl-4 border-l-2 border-white/10">
-                {link.dropdown.map((sublink) => (
-                  <a
-                    href={sublink.href}
-                    class="block text-lg font-medium text-downs-chalk/70 hover:text-white transition-colors"
-                  >
-                    {sublink.name}
-                  </a>
-                ))}
-              </div>
-            )}
           </div>
         ))
       }
@@ -195,25 +132,13 @@ import Logo from './Logo.astro';
     });
   }
 
-  // Dropdown accessibility
-  const dropdownContainers = document.querySelectorAll('.dropdown-container');
-  dropdownContainers.forEach(container => {
-    const trigger = container.querySelector('a[aria-haspopup="true"]');
-    if (trigger) {
-      container.addEventListener('focusin', () => {
-        trigger.setAttribute('aria-expanded', 'true');
-      });
-      container.addEventListener('focusout', (e) => {
-        if (!container.contains((e as FocusEvent).relatedTarget as Node)) {
-          trigger.setAttribute('aria-expanded', 'false');
-        }
-      });
-    }
-  });
-
   // Close mobile menu on escape
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileMenu && !mobileMenu.classList.contains('hidden')) {
+    if (
+      e.key === 'Escape' &&
+      mobileMenu &&
+      !mobileMenu.classList.contains('hidden')
+    ) {
       mobileMenuButton?.click();
     }
   });

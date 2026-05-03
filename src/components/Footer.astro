@@ -2,34 +2,83 @@
 const today = new Date();
 ---
 
-<footer class="bg-knole-ink text-white py-12 md:py-16">
+<footer class="bg-lwo-navy text-white py-12 md:py-20 border-t border-white/5">
   <div class="container mx-auto px-6 lg:px-12">
-    <div
-      class="flex flex-col md:flex-row items-center justify-between gap-8 border-b border-white/10 pb-12 mb-12"
-    >
-      <a
-        href="/"
-        class="group flex items-center gap-3 text-2xl font-serif font-normal tracking-tight text-white transition-colors hover:text-wealden-green"
-        aria-label="Sevenoaks Saxes home"
-      >
-        <span class="font-serif" aria-hidden="true">Sevenoaks Saxes</span>
-      </a>
-
-      <div class="flex items-center gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+      <div class="space-y-6">
         <a
-          href="/privacy"
-          class="text-sm font-semibold text-white hover:text-wealden-green transition-colors"
-          >Privacy Policy</a
+          href="/"
+          class="inline-block text-2xl font-sans font-bold tracking-tight text-white transition-colors hover:text-lwo-sage"
         >
+          Lambeth Wind Orchestra
+        </a>
+        <p class="text-white/70 max-w-xs leading-relaxed">
+          A friendly, inclusive community wind orchestra based in Herne Hill,
+          South London.
+        </p>
+      </div>
+
+      <div class="space-y-6">
+        <h3 class="text-lg font-bold text-white">Connect</h3>
+        <div class="flex flex-col space-y-3">
+          <a
+            href="https://facebook.com/lambethwindorchestra/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white/60 hover:text-lwo-sage transition-colors"
+            >Facebook</a
+          >
+          <a
+            href="https://instagram.com/lambethwindorchestra/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white/60 hover:text-lwo-sage transition-colors"
+            >Instagram</a
+          >
+          <a
+            href="https://www.youtube.com/channel/UC2q69G7ZaC6qIjIJudJIyZA"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white/60 hover:text-lwo-sage transition-colors"
+            >YouTube</a
+          >
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <h3 class="text-lg font-bold text-white">Info</h3>
+        <div class="flex flex-col space-y-3">
+          <a
+            href="/join"
+            class="text-white/60 hover:text-lwo-sage transition-colors"
+            >Join Us</a
+          >
+          <a
+            href="/contact"
+            class="text-white/60 hover:text-lwo-sage transition-colors"
+            >Contact</a
+          >
+          <a
+            href="/privacy"
+            class="text-white/60 hover:text-lwo-sage transition-colors"
+            >Privacy Policy</a
+          >
+        </div>
       </div>
     </div>
 
     <div
-      class="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left"
+      class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6"
     >
-      <p class="text-xs font-medium text-white/50 tracking-wider">
-        &copy; {today.getFullYear()} Sevenoaks Saxes. All rights reserved.
-      </p>
+      <div class="text-center md:text-left space-y-2">
+        <p class="text-sm font-medium text-white/50">
+          &copy; {today.getFullYear()} Lambeth Wind Orchestra.
+        </p>
+        <p class="text-xs text-white/40 leading-loose">
+          Lambeth Wind Orchestra is a charity registered in England and Wales
+          (charity number 1138703).
+        </p>
+      </div>
     </div>
   </div>
 </footer>

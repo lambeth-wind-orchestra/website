@@ -1,6 +1,6 @@
-# Sevenoaks Saxes Website
+# Lambeth Wind Orchestra Website
 
-Welcome to the repository for the Sevenoaks Saxes website. Sevenoaks Saxes is a community saxophone organisation consisting of two groups—the saxophone ensemble and the saxophone orchestra—and regularly organises play days for saxophone enthusiasts.
+Welcome to the repository for the Lambeth Wind Orchestra website. LWO is a community wind orchestra based in Herne Hill, South London, known for its inclusive ethos and commitment to performing music by women composers.
 
 This website is built with [Astro 5](https://astro.build/), styled with [Tailwind CSS 4](https://tailwindcss.com/), and deployed on [Cloudflare Pages](https://pages.cloudflare.com/).
 
@@ -8,7 +8,7 @@ This website is built with [Astro 5](https://astro.build/), styled with [Tailwin
 
 - **Framework:** [Astro 5](https://astro.build/) (Static Site Generation / Hybrid)
 - **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
-- **Typography:** [Instrument Sans](https://fonts.google.com/specimen/Instrument+Sans) (Body) and [Young Serif](https://fonts.google.com/specimen/Young+Serif) (Headings)
+- **Typography:** [Work Sans](https://fonts.google.com/specimen/Work+Sans)
 - **Deployment:** [Cloudflare Pages](https://pages.cloudflare.com/)
 - **Content:** Markdown (using Astro Content Layer)
 
@@ -45,7 +45,7 @@ This website is built with [Astro 5](https://astro.build/), styled with [Tailwin
 
    ```sh
    git clone <repository-url>
-   cd sevenoaks-saxes
+   cd lambeth-wind-orchestra
    ```
 
 2. **Install dependencies:**
@@ -69,31 +69,6 @@ npm run build
 npm run preview
 ```
 
-## Deployment
-
-### Automated Deployment
-
-The project is configured for automated deployment via Cloudflare Pages:
-
-- **Previews:** Every commit to any branch triggers a preview deployment.
-- **Production:** Commits to the `main` branch are automatically deployed to the production site.
-
-### Manual Deployment (Local)
-
-If you need to deploy manually from your local machine, you can use [Wrangler](https://developers.cloudflare.com/workers/wrangler/):
-
-1. **Login to Cloudflare:**
-
-   ```sh
-   npx wrangler login
-   ```
-
-2. **Deploy the built site:**
-   ```sh
-   npm run build
-   npx wrangler pages deploy ./dist
-   ```
-
 ## Content Management
 
 Non-technical users who want to update the website's content (e.g., adding events or editing page text) should refer to the **[Content Guide](./CONTENT_GUIDE.md)**.
@@ -107,10 +82,10 @@ Non-technical users who want to update the website's content (e.g., adding event
 
 ### General Guidelines
 
-- Maintain the "Heritage Modernism" design aesthetic.
+- Maintain the vibrant and inclusive design aesthetic.
 - Ensure all changes meet at least WCAG AA accessibility standards.
-- Follow the directory-based routing logic for the 'About' section (nested folders in `src/content/pages/about/`).
+- Follow the directory-based routing logic for the 'About' section.
 
 ## Contact & Support
 
-For any questions or issues, please contact **[@calumabarnett](https://github.com/calumabarnett)** on GitHub or [open an issue](https://github.com/calumabarnett/sevenoaks-saxes/issues) in the repository.
+Lambeth Wind Orchestra is a registered charity (Charity No. 1138703).

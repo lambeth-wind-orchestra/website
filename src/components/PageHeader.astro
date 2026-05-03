@@ -1,26 +1,39 @@
 ---
-import HeroMesh from './HeroMesh.astro';
-
 interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, image } = Astro.props;
 ---
 
-<section class="relative w-full overflow-hidden bg-downs-chalk/20 pt-32 pb-20 border-b border-knole-ink/5">
-  <HeroMesh complexity={4} speed={0.25} opacity={0.15} grain={true} seed={456} />
+<section
+  class={`relative w-full py-16 md:py-24 overflow-hidden ${image ? 'bg-lwo-navy text-white' : 'bg-lwo-sage text-white'}`}
+>
+  {
+    image && (
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-lwo-navy/70 z-10" />
+        <div
+          class="w-full h-full bg-cover bg-center"
+          style={`background-image: url('${image}')`}
+        />
+      </div>
+    )
+  }
 
   <div class="relative z-10 prose-container">
     <slot name="before" />
     <div class="animate-fade-in-up">
-      <h1 class="font-serif text-knole-ink m-0 text-5xl md:text-6xl lg:text-7xl leading-tight">
+      <h1
+        class="font-sans font-bold text-white m-0 text-4xl md:text-6xl leading-tight tracking-tight"
+      >
         {title}
       </h1>
       {
         description && (
-          <p class="text-xl md:text-2xl text-knole-ink/80 mt-8 max-w-2xl font-sans leading-relaxed">
+          <p class="mt-6 text-lg md:text-xl text-white/90 max-w-2xl font-sans font-normal leading-relaxed mb-0">
             {description}
           </p>
         )
