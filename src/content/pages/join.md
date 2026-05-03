@@ -1,5 +1,5 @@
 ---
-title: Join Lambeth Wind Orchestra
+title: Join Us
 description: We're always on the lookout for new members and would love to hear from you!
 ---
 

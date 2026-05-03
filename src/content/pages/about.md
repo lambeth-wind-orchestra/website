@@ -1,5 +1,5 @@
 ---
-title: About Lambeth Wind Orchestra
+title: About Us
 description: Learn about our history, our ethos, and our commitment to community music-making.
 ---
 

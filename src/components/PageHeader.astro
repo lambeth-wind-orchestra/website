@@ -2,41 +2,40 @@
 interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, image } = Astro.props;
 ---
 
 <section
-  class="relative w-full overflow-hidden bg-white pt-32 pb-20 border-b-[12px] border-lwo-navy"
+  class={`relative w-full py-16 md:py-24 overflow-hidden ${image ? 'bg-lwo-navy text-white' : 'bg-lwo-sage text-white'}`}
 >
-  <!-- Bold Geometric Accents -->
-  <div
-    class="absolute top-0 right-0 w-32 h-32 bg-lwo-sage opacity-20 transform translate-x-16 -translate-y-16 rotate-45"
-  >
-  </div>
+  {
+    image && (
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-lwo-navy/70 z-10" />
+        <div
+          class="w-full h-full bg-cover bg-center"
+          style={`background-image: url('${image}')`}
+        />
+      </div>
+    )
+  }
 
   <div class="relative z-10 prose-container">
     <slot name="before" />
     <div class="animate-fade-in-up">
-      <div class="inline-block bg-lwo-sage px-4 py-1 mb-6">
-        <span
-          class="text-lwo-navy font-sans font-bold tracking-widest text-sm uppercase"
-          >Lambeth Wind Orchestra</span
-        >
-      </div>
       <h1
-        class="font-sans font-bold text-lwo-navy m-0 text-5xl md:text-7xl leading-tight tracking-tighter"
+        class="font-sans font-bold text-white m-0 text-4xl md:text-6xl leading-tight tracking-tight"
       >
         {title}
       </h1>
       {
         description && (
-          <div class="mt-8 border-l-8 border-lwo-sage pl-8">
-            <p class="text-xl md:text-2xl text-lwo-navy/90 max-w-2xl font-sans font-medium leading-relaxed mb-0">
-              {description}
-            </p>
-          </div>
+          <p class="mt-6 text-lg md:text-xl text-white/90 max-w-2xl font-sans font-normal leading-relaxed mb-0">
+            {description}
+          </p>
         )
       }
     </div>

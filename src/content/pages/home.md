@@ -1,5 +1,5 @@
 ---
-title: Welcome to Lambeth Wind Orchestra
+title: Welcome
 description: A friendly community wind orchestra based in Herne Hill, South London.
 hero:
   title: Music for the Community

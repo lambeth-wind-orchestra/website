@@ -28,8 +28,6 @@ const { Content } = await render(entry);
   <Hero
     title={entry.data.hero?.title || entry.data.title}
     description={entry.data.hero?.description || ''}
-    primaryCTA={entry.data.hero?.primary_cta || 'Upcoming Events'}
-    secondaryCTA={entry.data.hero?.secondary_cta || 'Learn More'}
   />
 
   <section class="bg-white section-padding">

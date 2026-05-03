@@ -76,7 +76,7 @@
   }
 
   h2 {
-    @apply text-3xl md:text-4xl mt-16 mb-8 tracking-tight border-b-4 border-lwo-sage inline-block pb-2;
+    @apply text-3xl md:text-4xl mt-16 mb-8 tracking-tight;
   }
 
   h3 {
