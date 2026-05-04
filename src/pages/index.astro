@@ -15,10 +15,12 @@ const today = new Date();
 today.setHours(0, 0, 0, 0);
 
 const upcomingEvents = allEvents
-  .filter((event) => new Date(event.data.date) >= today)
-  .sort(
-    (a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime()
-  )
+  .filter((event) => !event.data.date || new Date(event.data.date) >= today)
+  .sort((a, b) => {
+    if (!a.data.date) return 1;
+    if (!b.data.date) return -1;
+    return new Date(a.data.date).getTime() - new Date(b.data.date).getTime();
+  })
   .slice(0, 3);
 
 const { Content } = await render(entry);
@@ -30,33 +32,17 @@ const { Content } = await render(entry);
     description={entry.data.hero?.description || ''}
   />
 
-  <section class="bg-white section-padding">
-    <div class="prose-container">
-      <div
-        class="prose max-w-none prose-p:leading-relaxed prose-headings:font-sans prose-headings:font-bold prose-headings:text-lwo-sage"
-      >
-        <Content />
-      </div>
-    </div>
-  </section>
-
   {
     upcomingEvents.length > 0 && (
       <section class="bg-lwo-off-white section-padding">
-        <div class="container mx-auto px-6 lg:px-12">
-          <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
-            <div class="max-w-2xl">
-              <h2 class="text-4xl md:text-5xl font-sans font-bold text-lwo-navy m-0">
-                Upcoming Events
-              </h2>
-              <p class="text-lg md:text-xl text-lwo-navy/70 mt-4 mb-0 font-medium">
-                Join Lambeth Wind Orchestra live at our next concert or
-                bandstand performance.
-              </p>
-            </div>
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
+            <h2 class="text-4xl md:text-5xl font-sans font-bold text-lwo-navy m-0">
+              Upcoming Events
+            </h2>
             <a
               href="/events"
-              class="group inline-flex items-center gap-2 text-xl font-sans font-bold text-lwo-sage transition-all"
+              class="group inline-flex items-center gap-2 text-lg font-sans font-bold text-lwo-sage transition-all"
             >
               <span class="relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-lwo-sage after:origin-right after:scale-x-0 group-hover:after:scale-x-100 group-hover:after:origin-left after:transition-transform after:duration-500">
                 View all events
@@ -78,13 +64,23 @@ const { Content } = await render(entry);
             </a>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {upcomingEvents.map((event) => (
-              <EventCard event={event} variant="slim" />
+              <EventCard event={event} />
             ))}
           </div>
         </div>
       </section>
     )
   }
+
+  <section class="bg-white section-padding">
+    <div class="prose-container">
+      <div
+        class="prose max-w-none prose-p:leading-relaxed prose-headings:font-sans prose-headings:font-bold prose-headings:text-lwo-sage"
+      >
+        <Content />
+      </div>
+    </div>
+  </section>
 </Layout>

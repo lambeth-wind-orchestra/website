@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import PageHeader from '../../components/PageHeader.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -13,94 +12,160 @@ export async function getStaticPaths() {
 
 const { event } = Astro.props;
 const { Content } = await render(event);
+const { name, date, startTime, endTime, location, type, description } =
+  event.data;
 
-const formattedDate = new Date(event.data.date).toLocaleDateString('en-GB', {
-  weekday: 'long',
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
+const formattedDate = date
+  ? new Date(date).toLocaleDateString('en-GB', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })
+  : 'Date TBC';
+
+const timeDisplay = startTime
+  ? endTime
+    ? `${startTime} – ${endTime}`
+    : startTime
+  : 'Time TBC';
 
 const typeColors = {
   concert: 'text-lwo-navy border-lwo-sage/30 bg-lwo-sage/10',
-  rehearsal: 'text-lwo-navy border-lwo-sage/20 bg-lwo-off-white',
+  bandstand: 'text-lwo-navy border-lwo-sage/20 bg-lwo-off-white',
   other: 'text-lwo-navy border-lwo-navy/10 bg-lwo-off-white',
 };
+
+const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`;
 ---
 
-<Layout title={event.data.name} description={event.data.description}>
-  <PageHeader title={event.data.name}>
-    <a
-      slot="before"
-      href="/events"
-      class="group inline-flex items-center text-[10px] font-bold text-lwo-navy/70 hover:text-lwo-sage mb-12 transition-all uppercase tracking-[0.3em]"
-    >
-      <svg
-        class="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
+<Layout title={name} description={description}>
+  <!-- Compact Header -->
+  <header class="bg-lwo-sage py-12 md:py-16">
+    <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+      <a
+        href="/events"
+        class="group inline-flex items-center text-xs font-bold text-white/80 hover:text-white mb-8 transition-colors uppercase tracking-wider"
       >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2.5"
-          d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-      </svg>
-      All Events
-    </a>
+        <svg
+          class="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2.5"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        All Events
+      </a>
 
-    <div
-      slot="before"
-      class="flex items-center space-x-3 mb-8 animate-fade-in-up"
-    >
-      <span
-        class={`inline-flex items-center px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.25em] rounded-full border ${typeColors[event.data.type] || typeColors.other}`}
+      <div class="space-y-4 animate-fade-in-up">
+        <span
+          class={`inline-flex items-center px-3 py-1 text-[11px] font-bold rounded-full border bg-white/10 text-white border-white/20`}
+        >
+          {type.charAt(0).toUpperCase() + type.slice(1)}
+        </span>
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-white leading-tight m-0"
+        >
+          {name}
+        </h1>
+      </div>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12 pt-12 border-t border-white/20 animate-fade-in-up stagger-1"
       >
-        {event.data.type}
-      </span>
-    </div>
-
-    <div
-      class="grid grid-cols-1 sm:grid-cols-3 gap-10 mt-16 animate-fade-in-up stagger-1"
-    >
-      <div>
-        <h2
-          class="text-[10px] font-bold text-lwo-sage uppercase tracking-[0.25em] mb-3 mt-0"
-        >
-          Date
-        </h2>
-        <p class="text-xl text-lwo-navy font-sans font-bold">{formattedDate}</p>
-      </div>
-      <div>
-        <h2
-          class="text-[10px] font-bold text-lwo-sage uppercase tracking-[0.25em] mb-3 mt-0"
-        >
-          Time
-        </h2>
-        <p class="text-xl text-lwo-navy font-sans font-bold">
-          {event.data.time}
-        </p>
-      </div>
-      <div>
-        <h2
-          class="text-[10px] font-bold text-lwo-sage uppercase tracking-[0.25em] mb-3 mt-0"
-        >
-          Location
-        </h2>
-        <p class="text-xl text-lwo-navy font-sans font-bold leading-relaxed">
-          {event.data.location}
-        </p>
+        <div>
+          <p
+            class="text-[11px] font-bold text-white/60 uppercase tracking-widest mb-2 mt-0"
+          >
+            Date
+          </p>
+          <p class="text-xl text-white font-sans font-bold m-0">
+            {formattedDate}
+          </p>
+        </div>
+        <div>
+          <p
+            class="text-[11px] font-bold text-white/60 uppercase tracking-widest mb-2 mt-0"
+          >
+            Time
+          </p>
+          <p class="text-xl text-white font-sans font-bold m-0">
+            {timeDisplay}
+          </p>
+        </div>
+        <div class="sm:col-span-2 md:col-span-1">
+          <p
+            class="text-[11px] font-bold text-white/60 uppercase tracking-widest mb-2 mt-0"
+          >
+            Location
+          </p>
+          <p class="text-xl text-white font-sans font-bold leading-tight m-0">
+            {location}
+          </p>
+        </div>
       </div>
     </div>
-  </PageHeader>
+  </header>
 
   <section class="bg-white section-padding">
-    <div class="prose-container">
-      <div
-        class="prose max-w-none prose-p:leading-relaxed prose-headings:font-sans prose-headings:font-bold prose-headings:text-lwo-sage prose-img:rounded-3xl prose-img:shadow-2xl"
-      >
-        <Content />
+    <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+        <!-- Main Content -->
+        <div class="lg:col-span-2">
+          <div
+            class="prose max-w-none prose-p:leading-relaxed prose-headings:font-sans prose-headings:font-bold prose-headings:text-lwo-navy prose-img:rounded-sm prose-img:shadow-xl"
+          >
+            <Content />
+          </div>
+        </div>
+
+        <!-- Sidebar / Location -->
+        <div class="lg:col-span-1">
+          <div class="sticky top-8 space-y-8">
+            <div
+              class="bg-lwo-off-white p-8 rounded-sm border border-lwo-navy/5"
+            >
+              <h3 class="text-xl font-bold text-lwo-navy mt-0 mb-4">
+                Location
+              </h3>
+              <p class="text-lwo-navy/70 text-base leading-relaxed mb-6">
+                {location}
+              </p>
+              <a
+                href={mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center w-full px-6 py-3 bg-lwo-navy text-white font-bold rounded-sm transition-all hover:bg-lwo-navy-light hover:scale-[1.02] shadow-sm"
+              >
+                Get Directions
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 ml-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

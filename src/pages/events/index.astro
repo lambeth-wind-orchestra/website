@@ -5,11 +5,19 @@ import { getCollection, getEntry } from 'astro:content';
 import EventCard from '../../components/EventCard.astro';
 
 const entry = await getEntry('pages', 'events');
-const events = await getCollection('events');
-// Sort events by date (upcoming first)
-const sortedEvents = events.sort(
-  (a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime()
-);
+const allEvents = await getCollection('events');
+
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+// Filter to only upcoming events (including those without a date)
+const upcomingEvents = allEvents
+  .filter((event) => !event.data.date || new Date(event.data.date) >= today)
+  .sort((a, b) => {
+    if (!a.data.date) return 1;
+    if (!b.data.date) return -1;
+    return new Date(a.data.date).getTime() - new Date(b.data.date).getTime();
+  });
 ---
 
 <Layout
@@ -22,17 +30,17 @@ const sortedEvents = events.sort(
   />
 
   <section class="bg-white section-padding">
-    <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
       {
-        sortedEvents.length > 0 ? (
-          <div class="grid gap-x-10 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
-            {sortedEvents.map((event) => (
+        upcomingEvents.length > 0 ? (
+          <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {upcomingEvents.map((event) => (
               <EventCard event={event} />
             ))}
           </div>
         ) : (
-          <div class="text-center py-32 bg-lwo-off-white rounded-3xl border-2 border-dashed border-lwo-navy/5">
-            <p class="text-lwo-navy/40 uppercase tracking-[0.3em] font-bold text-sm">
+          <div class="text-center py-32 bg-lwo-off-white rounded-sm border-2 border-dashed border-lwo-navy/5">
+            <p class="text-lwo-navy/40 font-bold text-sm">
               No upcoming events scheduled at this time.
             </p>
             <p class="mt-4 text-lwo-navy/60 font-medium">
