@@ -8,52 +8,52 @@ const { title, description } = Astro.props;
 ---
 
 <section
-  class="relative w-full h-[calc(100vh-80px)] min-h-[600px] flex items-center justify-center overflow-hidden bg-lwo-navy"
+  class="relative w-full h-[calc(100vh-80px)] min-h-[600px] flex overflow-hidden"
 >
-  <!-- Background Image Placeholder -->
-  <div class="absolute inset-0 z-0">
-    <div class="absolute inset-0 bg-lwo-navy/60 z-10"></div>
-    <!--
-      Developer Note: Place your hero image in src/assets/images/hero.jpg
-      and replace this div with an <Image /> component or a background-image style.
-    -->
-    <div
-      class="w-full h-full bg-cover bg-center"
-      style="background-image: url('images/hero.jpg');"
-    >
+  <!-- Background Layers -->
+  <div class="absolute inset-0 flex">
+    <div class="flex-1 bg-lwo-sage"></div>
+    <div class="hidden md:block flex-1 relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-cover bg-center"
+        style="background-image: url('images/hero.jpg');"
+      >
+      </div>
     </div>
   </div>
 
-  <!-- Content Overlay -->
-  <div class="relative z-20 container mx-auto px-6 sm:px-8 lg:px-12">
-    <div class="max-w-4xl">
-      <h1
-        class="text-white text-4xl md:text-6xl lg:text-7xl font-sans font-semibold leading-[1.1] tracking-tight animate-fade-in-up"
-      >
-        {title}
-      </h1>
-
-      <p
-        class="text-white/90 text-xl md:text-2xl font-sans font-normal max-w-2xl mt-8 leading-relaxed opacity-0 animate-fade-in-up stagger-1"
-      >
-        {description}
-      </p>
-
-      <div
-        class="flex flex-col sm:flex-row items-center gap-4 mt-12 opacity-0 animate-fade-in-up stagger-2"
-      >
-        <a
-          href="/join"
-          class="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 bg-lwo-sage text-lwo-navy font-sans font-bold text-lg rounded-sm transition-all duration-300 hover:bg-white hover:scale-105"
+  <!-- Content Layer -->
+  <div class="relative z-20 w-full max-w-7xl mx-auto flex items-center">
+    <div class="w-full md:w-1/2 px-6 sm:px-8 lg:px-12 pr-6 md:pr-12">
+      <div class="max-w-2xl">
+        <h1
+          class="text-lwo-navy text-4xl md:text-5xl lg:text-6xl font-sans font-bold leading-[1.1] tracking-tight animate-fade-in-up"
         >
-          Join Us
-        </a>
-        <a
-          href="/events"
-          class="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 border-2 border-white text-white font-sans font-bold text-lg rounded-sm transition-all duration-300 hover:bg-white/10 hover:scale-105"
+          {title}
+        </h1>
+
+        <p
+          class="text-lwo-navy/80 text-lg md:text-xl font-sans font-medium mt-8 leading-relaxed opacity-0 animate-fade-in-up stagger-1"
         >
-          Upcoming Events
-        </a>
+          {description}
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row items-center gap-4 mt-12 opacity-0 animate-fade-in-up stagger-2"
+        >
+          <a
+            href="/join"
+            class="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 bg-lwo-navy text-white font-sans font-bold text-lg rounded-sm transition-all duration-300 hover:bg-lwo-navy-light hover:scale-105 shadow-md"
+          >
+            Join Us
+          </a>
+          <a
+            href="/events"
+            class="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 border-2 border-lwo-navy text-lwo-navy font-sans font-bold text-lg rounded-sm transition-all duration-300 hover:bg-lwo-navy/10 hover:scale-105"
+          >
+            Upcoming Events
+          </a>
+        </div>
       </div>
     </div>
   </div>

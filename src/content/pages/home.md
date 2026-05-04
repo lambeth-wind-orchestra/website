@@ -2,7 +2,7 @@
 title: Welcome
 description: A friendly community wind orchestra based in Herne Hill, South London.
 hero:
-  title: Music for the Community
+  title: Music by the community for the community
   description: A vibrant, inclusive wind orchestra dedicated to making great music, celebrating diversity, and sharing the joy of performance in South London.
   primary_cta: Upcoming Events
   secondary_cta: About LWO
