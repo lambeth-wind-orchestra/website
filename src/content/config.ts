@@ -19,16 +19,30 @@ const pages = defineCollection({
 
 const events = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/events' }),
-  schema: z.object({
-    name: z.string(),
-    description: z.string(),
-    date: z.coerce.date(),
-    time: z.string(),
-    location: z.string(),
-    type: z.enum(['concert', 'rehearsal', 'play day', 'other']),
-    tags: z.array(z.string()).optional(),
-    image: z.string().optional(),
-  }),
+  schema: z
+    .object({
+      name: z.string(),
+      description: z.string().optional(),
+      date: z.coerce.date().optional(),
+      startTime: z.string().optional(),
+      endTime: z.string().optional(),
+      location: z.string(),
+      type: z.enum(['concert', 'bandstand', 'other']),
+      tags: z.array(z.string()).optional(),
+      image: z.string().optional(),
+    })
+    .refine(
+      (data) => {
+        if (data.endTime && !data.startTime) {
+          return false;
+        }
+        return true;
+      },
+      {
+        message: 'End time cannot be specified without a start time',
+        path: ['endTime'],
+      }
+    ),
 });
 
 export const collections = {

@@ -1,0 +1,36 @@
+
+> lambeth-wind-orchestra@1.0.0 dev
+> astro dev
+
+(node:64009) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+15:34:03 [@astrojs/cloudflare] Enabling sessions with Cloudflare KV with the "SESSION" KV binding.
+15:34:03 [@astrojs/cloudflare] If you see the error "Invalid binding `SESSION`" in your build output, you need to add the binding to your wrangler config file.
+15:34:03 [WARN] [adapter] Cloudflare does not support sharp at runtime. However, you can configure `imageService: "compile"` to optimize images with sharp on prerendered pages during build time.
+15:34:04 [types] Generated 1ms
+
+ update  ▶ New version of Astro available: 6.2.2
+  Run npx @astrojs/upgrade to update
+
+15:34:05 [content] Syncing content
+15:34:05 [content] Synced content
+15:34:05 [vite] Re-optimizing dependencies because vite config has changed
+
+ astro  v5.18.0 ready in 3233 ms
+
+┃ Local    http://localhost:4321/
+┃ Network  use --host to expose
+
+15:34:05 watching for file changes...
+15:35:01 [200] / 1016ms
+15:35:04 [200] /events 12ms
+15:35:05 [200] /events/20260712-garden-museum 8ms
+15:38:01 [200] / 8ms
+15:38:03 [200] /events 10ms
+15:38:05 [WARN] [router] A `getStaticPaths()` route pattern was matched, but no matching static path was found for requested path `/events/garden-museum`.
+
+Possible dynamic routes being matched: src/pages/events/[slug].astro.
+15:38:05 [404] /events/garden-museum 7ms
+15:39:13 [200] / 9ms
+15:39:14 [200] /events 9ms
+15:39:15 [200] /events/20260712-garden-museum 7ms
