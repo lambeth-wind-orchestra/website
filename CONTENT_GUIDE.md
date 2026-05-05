@@ -42,6 +42,17 @@ hero:
 Lambeth Wind Orchestra is more than just a band...
 ```
 
+
+## Updating the Join Page
+
+While general text on the Join page can be edited via `src/content/pages/join.md`, the structured sections (rehearsal details, membership fees, and active vacancies) are maintained directly within the page component to ensure consistent layout and design.
+
+To update these details, a developer will need to edit `src/pages/join.astro` and modify the following constants near the top of the file:
+
+- `vacancies`: An array of instruments currently needed.
+- `rehearsalTime`: When the orchestra rehearses.
+- `membershipFees`: Details about subscription costs.
+
 ## Images
 
 Images should be placed in `public/images/`. You can then reference them in your Markdown files.

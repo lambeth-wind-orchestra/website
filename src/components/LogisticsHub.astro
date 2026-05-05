@@ -1,0 +1,74 @@
+---
+interface Props {
+  rehearsalTime: string;
+  fees: string;
+  policy: string;
+  mapProps: {
+    embedUrl: string;
+    address: string;
+    locationName: string;
+  };
+}
+
+const { rehearsalTime, fees, policy, mapProps } = Astro.props;
+import Map from './Map.astro';
+---
+
+<div class="bg-lwo-navy text-white rounded-[3rem] overflow-hidden shadow-2xl">
+  <div class="grid grid-cols-1 lg:grid-cols-2">
+    <!-- Logistics Content -->
+    <div class="p-12 md:p-16 flex flex-col justify-center space-y-12">
+      <div class="space-y-10">
+        <!-- Rehearsals -->
+        <div class="flex gap-6">
+          <div class="shrink-0 w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-lwo-sage">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold mb-2">Where & When</h4>
+            <p class="text-white/70 m-0 leading-relaxed">
+              We rehearse every {rehearsalTime} at {mapProps.locationName}.
+            </p>
+          </div>
+        </div>
+
+        <!-- Fees -->
+        <div class="flex gap-6">
+          <div class="shrink-0 w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-lwo-sage">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 7c0-5.333-8-5.333-8 0M10 7v14M6 21h12M6 13h10" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold mb-2">Membership Fees</h4>
+            <p class="text-white/70 m-0 leading-relaxed">
+              {fees}
+            </p>
+          </div>
+        </div>
+
+        <!-- Policy -->
+        <div class="flex gap-6">
+          <div class="shrink-0 w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-lwo-sage">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold mb-2">Joining Policy</h4>
+            <p class="text-white/70 m-0 leading-relaxed">
+              {policy}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map Side -->
+    <div class="relative h-[500px] lg:h-auto">
+      <Map {...mapProps} />
+    </div>
+  </div>
+</div>

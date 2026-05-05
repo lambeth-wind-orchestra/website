@@ -1,27 +1,131 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageHeader from '../components/PageHeader.astro';
+import VacancyList from '../components/VacancyList.astro';
+import LogisticsHub from '../components/LogisticsHub.astro';
 import { getEntry, render } from 'astro:content';
 
 const entry = await getEntry('pages', 'join');
-
 if (!entry) {
   return Astro.redirect('/404');
 }
 
 const { Content } = await render(entry);
+const { title, description } = entry.data;
+
+// Join-specific data hardcoded as per instructions
+const vacancies = [
+  'French horn',
+  'Clarinet',
+  'Alto clarinet',
+  'Euphonium',
+  'Tenor saxophone',
+  'Trombone',
+  'Tuba',
+  'Percussion'
+];
+
+const instrumentation = [
+  'Flute',
+  'Piccolo',
+  'Bb Clarinet',
+  'Eb Clarinet',
+  'Alto Clarinet',
+  'Bass Clarinet',
+  'Bassoon',
+  'Oboe',
+  'Alto Saxophone',
+  'Tenor Saxophone',
+  'Baritone Saxophone',
+  'French Horn',
+  'Tenor Trombone',
+  'Bass Trombone',
+  'Trumpet',
+  'Tuba',
+  'Euphonium',
+  'Bass',
+  'Percussion'
+];
+
+const rehearsalTime = "Thursdays from 7:30PM - 9:30PM";
+const rehearsalLocation = "Herne Hill United Church";
+const rehearsalAddress = "Red Post Hill, London SE24 9PW";
+const googleMapsEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.805877808258!2d-0.0934141!3d51.4525048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876046da978434d%3A0xe518357876a66690!2sHerne%20Hill%20United%20Church!5e0!3m2!1sen!2suk!4v1740669225721!5m2!1sen!2suk";
+const membershipFees = "£50 per quarter (waived for students and in cases of financial hardship)";
+const joiningPolicy = "We don't hold auditions, but generally expect members to be of Grade 6 standard or above.";
+
+const mapProps = {
+  embedUrl: googleMapsEmbedUrl,
+  address: rehearsalAddress,
+  locationName: rehearsalLocation,
+};
 ---
 
-<Layout title={entry.data.title} description={entry.data.description}>
-  <PageHeader title={entry.data.title} description={entry.data.description} />
+<Layout title={title} description={description}>
+  <PageHeader title={title} description={description} />
 
-  <section class="bg-white section-padding">
-    <div class="prose-container">
-      <div
-        class="prose max-w-none prose-p:leading-relaxed prose-headings:font-sans prose-headings:font-bold prose-headings:text-lwo-sage"
-      >
-        <Content />
+  <main>
+    <!-- Introduction Section -->
+    <section class="py-16 md:py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="prose prose-lg max-w-none">
+          <Content />
+
+          <!-- Integrated CTA -->
+          <div class="mt-12 p-8 bg-lwo-sage/5 rounded-3xl border border-lwo-sage/10 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="text-center md:text-left">
+              <h3 class="text-xl font-bold text-lwo-navy m-0 mb-2">Ready to play with us?</h3>
+              <p class="text-lwo-navy/70 m-0">Get in touch to check current availability for your instrument.</p>
+            </div>
+            <a
+              href="/contact"
+              class="inline-flex items-center justify-center px-8 py-4 bg-lwo-navy text-white font-bold rounded-full hover:bg-lwo-sage transition-all hover:scale-105 active:scale-95 group shrink-0"
+            >
+              Contact Us to Join
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Logistics Section -->
+    <section class="py-12 md:py-16 bg-lwo-off-white">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <LogisticsHub
+          rehearsalTime={rehearsalTime}
+          fees={membershipFees}
+          policy={joiningPolicy}
+          mapProps={mapProps}
+        />
+      </div>
+    </section>
+
+    <!-- Vacancies Section -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="max-w-3xl mb-16">
+          <h2 class="text-4xl font-bold text-lwo-navy mb-6">Join the Band</h2>
+          <p class="text-xl text-lwo-navy/70 leading-relaxed">
+            We are always looking for enthusiastic musicians to join our ranks.
+            Below are our current priority vacancies.
+          </p>
+        </div>
+        <VacancyList vacancies={vacancies} allInstruments={instrumentation} />
+      </div>
+    </section>
+  </main>
 </Layout>

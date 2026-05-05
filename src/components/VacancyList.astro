@@ -1,0 +1,44 @@
+---
+interface Props {
+  vacancies: string[];
+  allInstruments: string[];
+}
+
+const { vacancies, allInstruments } = Astro.props;
+---
+
+<div class="space-y-12">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <!-- Current Vacancies -->
+    <div class="bg-lwo-off-white p-8 rounded-3xl border border-lwo-navy/5">
+      <h3 class="text-2xl font-bold text-lwo-navy mt-0 mb-6 flex items-center gap-3">
+        <span class="w-2 h-2 rounded-full bg-lwo-sage"></span>
+        Current Vacancies
+      </h3>
+      <p class="text-base text-lwo-navy/70 mb-8 italic">
+        We are particularly looking for players for the following instruments, but please get in touch regardless of what you play!
+      </p>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 mb-0">
+        {vacancies.map((v) => (
+          <li class="flex items-center gap-2 text-lwo-navy">
+            <svg class="w-4 h-4 text-lwo-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="font-medium">{v}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- General Instrumentation -->
+    <div class="flex flex-col justify-center">
+      <h3 class="text-2xl font-bold text-lwo-navy mt-0 mb-6">Our Instrumentation</h3>
+      <p class="text-lg leading-relaxed text-lwo-navy/80 mb-6">
+        The orchestra consists of a full range of woodwind, brass, and percussion.
+      </p>
+      <p class="text-base text-lwo-navy/60 leading-relaxed m-0 italic">
+        {allInstruments.join(', ')}
+      </p>
+    </div>
+  </div>
+</div>
