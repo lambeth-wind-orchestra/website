@@ -14,15 +14,6 @@ const pages = defineCollection({
         secondary_cta: z.string(),
       })
       .optional(),
-    // Join page specific fields
-    rehearsalTime: z.string().optional(),
-    rehearsalLocation: z.string().optional(),
-    rehearsalAddress: z.string().optional(),
-    googleMapsEmbedUrl: z.string().optional(),
-    membershipFees: z.string().optional(),
-    joiningPolicy: z.string().optional(),
-    vacancies: z.array(z.string()).optional(),
-    instrumentation: z.array(z.string()).optional(),
   }),
 });
 

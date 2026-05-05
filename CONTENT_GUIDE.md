@@ -42,33 +42,16 @@ hero:
 Lambeth Wind Orchestra is more than just a band...
 ```
 
-### Specialized Page Content
 
-Some pages like the **Join** page have additional structured fields in their frontmatter:
+## Updating the Join Page
 
-- `rehearsalTime`: When the orchestra rehearses (e.g., "Thursday evenings from 7:30PM - 9:30PM").
-- `rehearsalLocation`: The name of the rehearsal venue.
-- `rehearsalAddress`: The full address of the venue.
-- `googleMapsEmbedUrl`: The Google Maps iframe embed URL.
+While general text on the Join page can be edited via `src/content/pages/join.md`, the structured sections (rehearsal details, membership fees, and active vacancies) are maintained directly within the page component to ensure consistent layout and design.
+
+To update these details, a developer will need to edit `src/pages/join.astro` and modify the following constants near the top of the file:
+
+- `vacancies`: An array of instruments currently needed.
+- `rehearsalTime`: When the orchestra rehearses.
 - `membershipFees`: Details about subscription costs.
-- `joiningPolicy`: Information about auditions and standards.
-- `vacancies`: A list of instruments with current openings.
-- `instrumentation`: A full list of instruments in the orchestra.
-
-Example for `join.md`:
-
-```markdown
----
-title: Join Us
-rehearsalTime: "Thursday evenings from 7:30PM - 9:30PM"
-rehearsalLocation: "Herne Hill United Church"
-rehearsalAddress: "Red Post Hill, London SE24 9PW"
-googleMapsEmbedUrl: "https://www.google.com/maps/embed?..."
-vacancies:
-  - French horn
-  - Percussion
----
-```
 
 ## Images
 
