@@ -46,25 +46,27 @@ Lambeth Wind Orchestra is more than just a band...
 
 Some pages like the **Join** page have additional structured fields in their frontmatter:
 
+- `rehearsalTime`: When the orchestra rehearses (e.g., "Thursday evenings from 7:30PM - 9:30PM").
+- `rehearsalLocation`: The name of the rehearsal venue.
+- `rehearsalAddress`: The full address of the venue.
+- `googleMapsEmbedUrl`: The Google Maps iframe embed URL.
+- `membershipFees`: Details about subscription costs.
+- `joiningPolicy`: Information about auditions and standards.
 - `vacancies`: A list of instruments with current openings.
-- `instruments`: A full list of instruments in the orchestra.
-- `rehearsals`: Day, time, and location details.
-- `membership`: Fees and policy information.
+- `instrumentation`: A full list of instruments in the orchestra.
 
 Example for `join.md`:
 
 ```markdown
 ---
 title: Join Us
+rehearsalTime: "Thursday evenings from 7:30PM - 9:30PM"
+rehearsalLocation: "Herne Hill United Church"
+rehearsalAddress: "Red Post Hill, London SE24 9PW"
+googleMapsEmbedUrl: "https://www.google.com/maps/embed?..."
 vacancies:
   - French horn
   - Percussion
-rehearsals:
-  day: Thursday
-  time: 7:30PM - 9:30PM
-  location: Herne Hill United Church
-  address: Red Post Hill, London SE24 9PW
-  googleMapsEmbedUrl: https://www.google.com/maps/embed?...
 ---
 ```
 
