@@ -1,0 +1,37 @@
+---
+interface Props {
+  embedUrl: string;
+  address: string;
+  locationName: string;
+}
+
+const { embedUrl, address, locationName } = Astro.props;
+---
+
+<div class="rounded-3xl overflow-hidden shadow-xl bg-lwo-off-white">
+  <div class="aspect-video w-full">
+    <iframe
+      src={embedUrl}
+      width="100%"
+      height="100%"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title={`${locationName} Map`}></iframe>
+  </div>
+  <div class="p-6 md:p-8">
+    <h4 class="text-xl font-sans font-bold text-lwo-navy mb-2">
+      {locationName}
+    </h4>
+    <p class="text-lwo-navy/70 m-0">{address}</p>
+    <a
+      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationName + ' ' + address)}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-block mt-4 text-lwo-sage font-bold hover:underline"
+    >
+      Open in Google Maps
+    </a>
+  </div>
+</div>

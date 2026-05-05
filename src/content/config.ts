@@ -14,6 +14,23 @@ const pages = defineCollection({
         secondary_cta: z.string(),
       })
       .optional(),
+    vacancies: z.array(z.string()).optional(),
+    instruments: z.array(z.string()).optional(),
+    rehearsals: z
+      .object({
+        day: z.string(),
+        time: z.string(),
+        location: z.string(),
+        address: z.string(),
+        googleMapsEmbedUrl: z.string().optional(),
+      })
+      .optional(),
+    membership: z
+      .object({
+        fees: z.string(),
+        policy: z.string(),
+      })
+      .optional(),
   }),
 });
 

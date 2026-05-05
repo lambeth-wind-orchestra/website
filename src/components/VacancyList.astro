@@ -1,0 +1,52 @@
+---
+interface Props {
+  vacancies: string[];
+  allInstruments: string[];
+}
+
+const { vacancies, allInstruments } = Astro.props;
+
+// Sort vacancies to show them at the top if they are in the allInstruments list,
+// but actually the request said "the instruments we have in the orchestra AND the current vacancies we have"
+// So I will show them as two distinct lists or one highlighted list.
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+  <div>
+    <h3 class="text-2xl font-sans font-bold text-lwo-navy mb-6">
+      Current Vacancies
+    </h3>
+    <p class="text-lwo-navy/70 mb-6">
+      We are particularly looking for players for the following instruments, but
+      please get in touch regardless of what you play!
+    </p>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      {
+        vacancies.map((vacancy) => (
+          <li class="flex items-center gap-2 text-lwo-navy font-medium">
+            <span class="flex-shrink-0 w-2 h-2 rounded-full bg-lwo-sage" />
+            {vacancy}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <div>
+    <h3 class="text-2xl font-sans font-bold text-lwo-navy mb-6">
+      Our Instrumentation
+    </h3>
+    <p class="text-lwo-navy/70 mb-6">
+      The orchestra consists of a full range of woodwind, brass, and percussion:
+    </p>
+    <div class="flex flex-wrap gap-2">
+      {
+        allInstruments.map((instrument) => (
+          <span class="px-3 py-1 bg-lwo-off-white text-lwo-navy/80 text-sm font-medium rounded-full border border-lwo-navy/10">
+            {instrument}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+</div>

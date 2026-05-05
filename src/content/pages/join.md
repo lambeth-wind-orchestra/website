@@ -1,24 +1,50 @@
 ---
 title: Join Us
 description: We're always on the lookout for new members and would love to hear from you!
+vacancies:
+  - French horn
+  - Clarinet
+  - Alto clarinet
+  - Euphonium
+  - Tenor saxophone
+  - Trombone
+  - Tuba
+  - Percussion
+instruments:
+  - Flute
+  - Piccolo
+  - Bb Clarinet
+  - Eb Clarinet
+  - Alto Clarinet
+  - Bass Clarinet
+  - Bassoon
+  - Oboe
+  - Alto Saxophone
+  - Tenor Saxophone
+  - Baritone Saxophone
+  - French Horn
+  - Tenor Trombone
+  - Bass Trombone
+  - Trumpet
+  - Tuba
+  - Euphonium
+  - Bass
+  - Percussion
+rehearsals:
+  day: Thursday
+  time: 7:30PM - 9:30PM
+  location: Herne Hill United Church
+  address: Red Post Hill, London SE24 9PW
+  googleMapsEmbedUrl: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.805877808258!2d-0.0934141!3d51.4525048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876046da978434d%3A0xe518357876a66690!2sHerne%20Hill%20United%20Church!5e0!3m2!1sen!2suk!4v1740669225721!5m2!1sen!2suk
+membership:
+  fees: £50 per quarter (waived for students and in cases of financial hardship)
+  policy: We don't hold auditions, but generally expect members to be of Grade 6 standard or above.
 ---
 
 Lambeth Wind Orchestra is a friendly and inclusive community band, and we are always happy to welcome new members. Whether you've just moved to the area or are looking to pick up your instrument after a break, we'd love to hear from you.
 
-## Who can join?
+If we have a vacancy, we'll invite you along to a few rehearsals so you can try us out before deciding whether to join.
 
-We welcome players of all ages and backgrounds. While we don't have formal auditions for most sections, we generally recommend a standard of around Grade 6 or above to ensure you get the most out of our rehearsals and repertoire.
+### Commitment to Inclusion
 
-We are a wind orchestra, so we welcome:
-
-- Woodwind (Flute, Oboe, Clarinet, Saxophone, Bassoon)
-- Brass (Trumpet, Horn, Trombone, Euphonium, Tuba)
-- Percussion
-
-## Rehearsals
-
-Our rehearsals are held in Herne Hill on Wednesday evenings. They are a mix of focused musical work and social connection.
-
-## Get in Touch
-
-If you're interested in joining us, please fill out our [Contact Form](/contact) or email us directly. Let us know what instrument you play and a little bit about your musical background. We look forward to meeting you!
+Lambeth Wind Orchestra is committed to holding inclusive rehearsals, concerts and events; if you would like to join us and have a need for reasonable adjustments, please let us know in your joining query and we will do our best to accommodate.
